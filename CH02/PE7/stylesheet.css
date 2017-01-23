@@ -1,5 +1,8 @@
+body {
+    background-color: black;
+}
+
 div {
     text-align: center;
     color: white;
-    background-color: black;
 }
