@@ -8,8 +8,8 @@ td {
 }
 
 table {
-    background-color: yellow;
+    background-color: #ffd633;
     border: 1px solid black;
     border-collapse: collapse;
-    border-radius: 5px;
+    border-radius: 10px;
 }
