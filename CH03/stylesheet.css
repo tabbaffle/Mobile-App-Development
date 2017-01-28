@@ -1,0 +1,18 @@
+[data-role="header"] {
+    text-align: center;
+}
+
+[data-role="footer"] {
+    text-align: center;
+    font-weight: bold;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-weight: bold;
+}
+
+td {
+    border: 1px solid black;
+}
