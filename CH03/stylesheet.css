@@ -4,15 +4,15 @@
 
 [data-role="footer"] {
     text-align: center;
-    font-weight: bold;
+    font-weight: small;
 }
 
 table {
-    border: 1px solid black;
+    border: 2px solid black;
     border-collapse: collapse;
-    font-weight: bold;
 }
 
 td {
-    border: 1px solid black;
+    border: 2px solid black;
 }
+
