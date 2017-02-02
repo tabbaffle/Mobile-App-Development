@@ -1,4 +1,3 @@
-//TODO Figure out how to delete the table elements. 
 function calculateValues(height, time)
 {   
     var g = 9.8;
@@ -9,11 +8,12 @@ function calculateValues(height, time)
 }
 
 function display() {
-    $("#table tbody > tr").remove();
+    $("#table thead").remove();
+    $("#table tbody").remove();
 
     var height = $("#height").val();
 
-    if(height === false)
+    if(height.length === 0 )
     {
         alert("Please enter the inital height.");
     }
@@ -31,14 +31,20 @@ function display() {
         var valueArray = [];
         var velocity = 0;
         height = height * 1;
-        var currentHeight = 0;
+        var currentHeight = height;
 
-        let tableBody = $("<thead></thead>");
+        $("#table").append("<thead><tr><th>"
+                + "<div class=\"head\">Time (s)</div></th>"
+                + "<th><div class=\"head\">Height (m)</div></th>"
+                + "<th><div class=\"head\">Velocity (m/s)</div></th></tr>");
+        let tableBody = $("<tbody></tbody>");
         while(currentHeight >= 0)
         {
-            let row = $("<tr><td>" + time.toFixed(2) 
-                    +"</td><td>" + currentHeight.toFixed(2) +"</td><td>" 
-                    +velocity.toFixed(2)+"</td></tr>");
+            let row = $("<tr><td><div class=\"content\">" + time.toFixed(2) 
+                    +"</div></td><td><div class=\"content\">" 
+                    + currentHeight.toFixed(2) +"</div></td><td>" 
+                    + "<div class=\"content\">" + velocity.toFixed(2)
+                    + "</div></td></tr>");
             tableBody.append(row);
             time++;
             valueArray = calculateValues(height, time);

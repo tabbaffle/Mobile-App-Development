@@ -10,6 +10,13 @@ th {
 
 td {
     border: 1px solid black;
+}
+
+.head {
+    text-align: center;
+}
+
+.content {
     text-align: right;
 }
 
