@@ -22,7 +22,7 @@ function checkUserForm() { //Check for empty fields in the form
     ($("#txtLastName").val() != "") &&
     ($("#txtHealthCardNumber").val() != "") &&
     ($("#datBirthdate").val() != "") && ($(
-      "#datBirthdate").val() <= currentDatei)){ 
+      "#datBirthdate").val() <= currentDate)){ 
     return true;
   } else {
     return false;

@@ -82,10 +82,10 @@ function loadUserInformation() {
     $("#divUserSection").append("User's Name:" +
       user.FirstName + " " + user.LastName +
       "<br>Age: " + age +
-      "<br>Health Card Number: " + user.HealthCardNumber +
+      "<br>Health Card Number: " + user.HealthCardNumber);
     $("#divUserSection").append(
       "<br><a href='#pageUserInfo' data-mini='true' data-role='button' data-icon='edit' data-iconpos='left' data-inline='true' >Edit Profile</a>"
-    ));
+    );
     $('#divUserSection [data-role="button"]').button(); // 'Refresh' the button
   }
 }
@@ -140,8 +140,8 @@ function listRecords() {
       "<thead>" +
       "   <tr>" +
       "     <th>Date</th>" +
-      "     <th>High (mm HG)</th>" +
-      "     <th>Low (mm HG)</th>" +
+      "     <th>High (mm<br>HG)</th>" +
+      "     <th>Low (mm<br>HG)</th>" +
       "     <th>Edit / Delete</th>" +
       "   </tr>" +
       "</thead>" +
@@ -156,7 +156,6 @@ function listRecords() {
         "  <td>" + rec.Date + "</td>" +
         "  <td>" + rec.HighPressure+ "</td>" +
         "  <td>" + rec.LowPressure+ "</td>" +
-        "</td>" +
         "  <td><a data-inline='true'  data-mini='true' data-role='button' href='#pageNewRecordForm' onclick='callEdit(" +
         i +
         ")' data-icon='edit' data-iconpos='notext'></a>" +
@@ -246,7 +245,7 @@ function addRecord() {
     var record = {
       "Date": $('#datExamDate').val(),
       "HighPressure": $('#highPressure').val(),
-      "lowPressure": $('#lowPressure').val(),
+      "LowPressure": $('#lowPressure').val(),
     };
 
     try {
