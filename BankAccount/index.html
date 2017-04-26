@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+By Connor 
+-->
+<html>
+    <head>
+        <title>A07</title>
+        <!--Adjusting the page on mobile screen  -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- JQ -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>        
+        <!--        Need to put this block AFTER jQuery but BEFORE JQM -->
+        <script>
+            //for bypassing the chrome error
+            $(document).bind('mobileinit', function () {
+                $.mobile.pushStateEnabled = false;
+            });
+        </script>
+        <!-- JQM -->
+        <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+    </head>
+    <body>
+        <div id="Menu" data-role="page">
+            <div data-role="header"><h3>Select your option</h3></div>
+
+            <div data-role="content">
+                <button class="switchPage" id="Transactions">View Transactions</button>
+                <button class="switchPage" id="Deposit">Deposit</button>
+                <button class="switchPage" id="Withdraw">Withdraw</button>
+            </div>
+
+            <div data-role="footer"><h3>Developed By Connor Tannahill (A00397783)</h3></div>
+        </div>
+
+        <div id="Transactions" data-role="page">
+            <div data-role="header"><h3>Transaction Records</h3></div>
+
+            <div data-role="content">
+                <table id="transactionsTable" data-role="table" data-mode="columntoggle:none"
+                    class="ui-responsive" border="2px solid black"></table>
+                <a href="#Menu" data-role="button" data-icon="back"
+                    data-iconpos="left" data-inline="true">Go back to menu</a>
+            </div>
+
+            <div data-role="footer"><h3>Developed by Connor Tannahill (A00397783)</h3></div>
+        </div>
+        
+        <div id="Deposit" data-role="page">
+            <div data-role="header"><h3>Enter amount to deposit</h3></div>
+
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <label for="depositAmount">$</label>
+                    <input type="number" id="depositAmount">
+                    <button id="depositToAccount">Deposit</button>
+                </div>
+                <table id="depositTable" data-role="table" data-mode="columntoggle:none"
+                    class="ui-responsive" border="2px solid black"></table>
+                <a class="MenuButton" href="#Menu" data-role="button" data-icon="back"
+                    data-iconpos="left" data-inline="true">Go back to menu</a>
+            </div>
+
+            <div data-role="footer"><h3>Developed by Connor Tannahill (A00397783)</h3></div>
+        </div>
+
+        <div id="Withdraw" data-role="page">
+            <div data-role="header"><h3>Enter amount to withdraw</h3></div>
+
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <label for="withdrawAmount">$</label>
+                    <input type="number" id="withdrawAmount">
+                    <button id="withdrawFromAccount">Withdraw</button>
+                </div>
+                <table id="withdrawTable" data-role="table" data-mode="columntoggle:none"
+                    class="ui-responsive" border="2px solid black"></table>
+                <a class="MenuButton" href="#Menu" data-role="button" data-icon="back"
+                    data-iconpos="left" data-inline="true">Go back to menu</a>
+            </div>
+
+            <div data-role="footer"><h3>Developed by Connor Tannahill (A00397783)</h3></div>
+        </div>
+        
+        <script src="scripts/bankAccountController.js"></script>
+    </body>
+</html>

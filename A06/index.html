@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+By Yasushi
+-->
+<html>
+    <head>
+        <title>Data Entry</title>
+        <!--Adjusting the page on mobile screen  -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- JQ -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>        
+        <!--        Need to put this block AFTER jQuery but BEFORE JQM -->
+        <script>
+            //for bypassing the chrome error
+            $(document).bind('mobileinit', function () {
+                $.mobile.pushStateEnabled = false;
+            });
+        </script>
+        <!-- JQM -->
+        <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+    </head>
+    <body>
+        <div id="page1" data-role="page">
+            <div data-role="header">
+                <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#page1" class="ui-btn-active ui-state-persist">
+                            Entry
+                        </a>
+                    </li>
+                    <li><a href="#page2">Show Records</a></li>
+                </ul>
+                </div>
+            </div>
+
+            <h3>Enter your information</h3>
+            <hr>
+            <div data-role="content">
+                <label for="a_number">A-number:</label>
+                <input type="text" id="a_number" name="a_number"/>
+
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                    <input id="undergraduate" type="radio" name="studentOptions" 
+                        value="undergraduate" checked>
+                    <label for="undergraduate">Undergraduate</label>
+                    <input id="graduate" type="radio" name="studentOptions" 
+                        value="graduate">
+                    <label for="graduate">Graduate</label>
+                </fieldset>
+                <select id="ageRange" data-native-menu="false">
+                    <option value="unselected" selected>Select Age Group</option>
+                    <option value="Under 20">Under 20</option>
+                    <option value="20 to 29">20 to 29</option>
+                    <option value="30 to 39<">30 to 39</option>
+                    <option value="40 to 49">40 to 49</option>
+                    <option value="50 to 59">50 to 59</option>
+                    <option value="60 and over">60 and over</option>
+                </select>
+                <hr>
+                <hr>
+                <button id="saveButton">Save</button>
+            </div>
+
+            <div data-role="footer">
+                <h3>
+                    Developed by Connor Tannahill (A00397783)
+                </h3>
+            </div>
+        </div>
+
+        <div id="page2" data-role="page">
+            <div data-role="header">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#page1">Entry</a></li>
+                        <li>
+                            <a href="#page2" class="ui-btn-active ui-state-persist">
+                                Show Records
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div data-role="content">
+                <button id="displayButton">Show Records</button>
+                <table id="displayTable" data-role="table" data-mode="columntoggle:none" 
+                    class="ui-responsive" border='1px solid black' width='%100'></table>
+            </div>
+            
+            <div data-role="footer">
+                <h3>
+                    Developed by Connor Tannahill (A00397783)
+                </h3>
+            </div>
+        </div>
+            
+        <script src="scripts/storeInformation.js"></script>        
+    </body>
+</html>
